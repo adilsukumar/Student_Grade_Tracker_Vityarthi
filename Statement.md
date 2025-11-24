@@ -1,4 +1,4 @@
-# Project Statement - Student Learning Analytics Dashboard
+# Student Learning Analytics Dashboard
 
 ## Problem Statement
 
