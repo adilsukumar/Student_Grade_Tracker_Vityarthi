@@ -13,24 +13,24 @@ def set_name():
     global student_name
     name = input("\n👤 Enter your name: ")
     student_name = name
-    print("\n✅ Welcome, " + name + "!")
+    print("\n Welcome, " + name + "!")
 
 def add_subject():
     subject = input("\n📚 Enter subject name: ")
     if subject not in subjects:
         subjects[subject] = {"grades": [], "hours": 0}
-        print("\n✅ Added: " + subject)
+        print("\n Added: " + subject)
     else:
-        print("\n⚠️  Subject already exists!")
+        print("\n  Subject already exists!")
 
 def add_grade():
     subject = input("\n📚 Enter subject name: ")
     if subject in subjects:
         grade = float(input("📝 Enter grade (0-100): "))
         subjects[subject]["grades"].append(grade)
-        print("\n✅ Grade " + str(grade) + " added to " + subject)
+        print("\n Grade " + str(grade) + " added to " + subject)
     else:
-        print("\n❌ Subject not found!")
+        print("\n Subject not found!")
 
 def add_session():
     subject = input("\n📚 Enter subject name: ")
@@ -40,13 +40,13 @@ def add_session():
         today = datetime.now().strftime("%Y-%m-%d")
         session_data = {"subject": subject, "hours": hours, "date": today}
         sessions.append(session_data)
-        print("\n✅ Added " + str(hours) + " hours to " + subject)
+        print("\n Added " + str(hours) + " hours to " + subject)
     else:
-        print("\n❌ Subject not found!")
+        print("\n Subject not found!")
 
 def delete_session():
     if len(sessions) == 0:
-        print("\n❌ No sessions found!")
+        print("\n No sessions found!")
         return
     
     print("\n📋 Study Sessions:")
@@ -60,11 +60,11 @@ def delete_session():
             s = sessions[choice]
             subjects[s["subject"]]["hours"] -= s["hours"]
             sessions.pop(choice)
-            print("\n✅ Deleted: " + s['subject'] + " - " + str(s['hours']) + " hours")
+            print("\n Deleted: " + s['subject'] + " - " + str(s['hours']) + " hours")
         else:
-            print("\n❌ Invalid number!")
+            print("\n Invalid number!")
     except:
-        print("\n❌ Invalid input!")
+        print("\n Invalid input!")
 
 def show_report():
     print("\n" + "="*50)
@@ -72,7 +72,7 @@ def show_report():
     print("="*50)
     
     if len(subjects) == 0:
-        print("\n❌ No subjects added yet!")
+        print("\n No subjects added yet!")
         return
         
     for subject in subjects:
@@ -209,9 +209,9 @@ def load_data():
                 session_data = {"subject": parts[0], "hours": float(parts[1]), "date": parts[2]}
                 sessions.append(session_data)
                 
-        print("\n📂 Data loaded!")
+        print("\n Data loaded!")
     except:
-        print("\n🆕 Error loading data.")
+        print("\n Error loading data.")
 
 def main():
     print("\n" + "="*70)
@@ -259,12 +259,12 @@ def main():
         elif choice == '10':
             save_data()
             print("\n" + "="*40)
-            print("🎓 Thank you for using Student Dashboard - made by Adil Sukumar (25MIB10056) 🎓")
+            print("🎓 Thank you for using Student Dashboard - made by Adil Sukumar 🎓")
             print("📚 Keep learning and growing! 📚")
             print("="*40)
             break
         else:                                   
-            print("\n❌ Invalid choice! Please enter 1-10.")
+            print("\n Invalid choice! Please enter 1-10.")
 
 if __name__ == "__main__":
     main()
